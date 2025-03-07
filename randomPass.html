@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>🔐 Random Password Generator</h2>
+        <input type="text" id="password" placeholder="Your Password will appear here" readonly>
+        
+        <div class="options" id="step1" style="display: none;">
+            <p>Do you want to include uppercase letters?</p>
+            <button onclick="setOption('uppercase', true, 'step1', 'step2')">Yes</button>
+            <button onclick="setOption('uppercase', false, 'step1', 'step2')">No</button>
+        </div>
+        
+        <div class="options" id="step2" style="display: none;">
+            <p>Do you want to include numbers?</p>
+            <button onclick="setOption('numbers', true, 'step2', 'step3')">Yes</button>
+            <button onclick="setOption('numbers', false, 'step2', 'step3')">No</button>
+        </div>
+        
+        <div class="options" id="step3" style="display: none;">
+            <p>Do you want to include special characters?</p>
+            <button onclick="setOption('specialChars', true, 'step3', 'step4')">Yes</button>
+            <button onclick="setOption('specialChars', false, 'step3', 'step4')">No</button>
+        </div>
+        
+        <div class="options" id="step4" style="display: none;">
+            <p>Select password length:</p>
+            <input type="range" id="lengthSlider" min="6" max="20" value="12" oninput="updateLength()">
+            <span id="lengthValue">12</span>
+            <button onclick="setOption('length', document.getElementById('lengthSlider').value, 'step4', 'generatePassword')">Confirm</button>
+        </div>
+        
+        <button id="startButton" onclick="showStep('step1'); this.style.display='none';">Generate Password</button>
+        <button id="generateAgain" onclick="resetGenerator()" style="display: none;">Generate Another Password</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
