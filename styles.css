@@ -11,7 +11,7 @@ html, body {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
-    background: linear-gradient(135deg, #cf7e38, #ff6f61, #d33f77, #7a1482);
+    background: linear-gradient(135deg, #ff6f61, #e85067, #d33f77, #a12b85, #7a1482);
     background-size: 100% 100%;
     animation: gradientBG 6s ease infinite;
     color: white;
